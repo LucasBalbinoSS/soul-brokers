@@ -1,0 +1,227 @@
+/* reset & variáveis */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  list-style: none;
+  text-decoration: none;
+}
+
+:root {
+  --cinza: #96A0B5;
+  --preto-900: #0C0A0A;
+  --preto-800: #101010;
+  --arredondado-50: 50px;
+}
+
+
+
+/* fontes */
+@font-face {
+  font-family: 'Clash Display';
+  src: url(./src/fonts/ClashDisplay-Regular.woff) format(woff);
+  font-weight: 400;
+}
+
+@font-face {
+  font-family: 'Clash Display';
+  src: url(./src/fonts/ClashDisplay-Medium.woff) format(woff);
+  font-weight: 500;
+}
+
+@font-face {
+  font-family: 'Clash Display';
+  src: url(./src/fonts/ClashDisplay-Bold.woff) format(woff);
+  font-weight: 700;
+}
+
+@font-face {
+  font-family: 'General Sans';
+  src: url(./src/fonts/GeneralSans-Regular.woff) format(woff);
+  font-weight: 400;
+}
+
+@font-face {
+  font-family: 'General Sans';
+  src: url(./src/fonts/GeneralSans-Medium.woff) format(woff);
+  font-weight: 500;
+}
+
+@font-face {
+  font-family: 'General Sans';
+  src: url(./src/fonts/GeneralSans-Semibold.woff) format(woff);
+  font-weight: 600;
+}
+
+body {
+  font-family: 'General Sans', sans-serif;
+}
+
+
+
+/* topo mobile */
+.topo {
+  color: var(--cinza);
+  border-bottom: 1px solid rgba(211, 211, 211, 0.382);
+  padding-block: 0.5rem;
+  padding-inline: 1rem;
+  position: relative;
+}
+
+.topo-interno {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.topo-logo {
+  width: 144px;
+}
+
+.topo-menu-mobile-input {
+  display: none;
+}
+
+.topo-menu-mobile-link,
+.topo-menu-link {
+  color: var(--cinza);
+  font-weight: 500;
+}
+
+.topo-menu-mobile-link-entre-em-contato {
+  color: var(--preto-900);
+  text-decoration: underline;
+  text-underline-offset: 4px;
+}
+
+
+
+@media (max-width: 767px) {
+  .topo-menu-mobile-btn {
+    height: 2.25rem;
+    width: 2.25rem;
+  }
+
+  .topo-interno label {
+    cursor: pointer;
+  }
+
+  .topo-menu-mobile {
+    position: absolute;
+    width: 16rem;
+    visibility: hidden;
+    opacity: 0;
+    background-color: #fff;
+    border: 1px solid #e4e4e7;
+    top: 100%;
+    right: 1rem;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
+    overflow: hidden;
+    transition:opacity 200ms, visibility 200ms;
+  }
+
+  /* abre menu mobile */
+  .topo-menu-mobile-input:checked + .topo-menu-mobile {
+    visibility: visible;
+    opacity: 1;
+  }
+
+  .topo-menu-mobile-lista {
+    display: flex;
+    flex-direction: column;
+    font-size: 1.125rem;
+  }
+
+  .topo-menu-mobile-link {
+    padding: 1rem;
+    display: inline-block;
+    width: 100%;
+    transition: background-color 200ms cubic-bezier(0.4, 0, 0.2, 1);
+  }
+  
+  .topo-menu-mobile-link:hover {
+    background-color: #f3f4f6;
+  }
+
+  .topo-menu,
+  .topo-menu-link-entre-em-contato {
+    display: none;
+  }
+}
+
+/* tablet */
+@media (min-width: 768px) {
+  .topo-interno label,
+  .topo-menu-mobile {
+    display: none;
+  }
+
+  .topo-menu {
+    display: flex;
+    align-items: center;
+    font-size: 0.875rem;
+  }
+
+  .topo-menu-lista {
+    display: flex;
+    align-items: center;
+    gap: 1.25rem;
+  }
+
+  .topo-menu-link {
+    padding: 0.15rem;
+    transition: color 300ms cubic-bezier(0.4, 0, 0.2, 1);
+  }
+
+  .topo-menu-link:hover {
+    color: var(--preto-900);
+  }
+
+  .topo-menu-link-entre-em-contato {
+    display: block;
+    border: 1px solid var(--preto-900);
+    color: var(--preto-900);
+    padding: 0.4375rem 1.1875rem;
+    border-radius: var(--arredondado-50);
+    font-size: 0.875rem;
+    font-weight: 500;
+    transition: background-color 300ms cubic-bezier(0.4, 0, 0.2, 1), color 300ms cubic-bezier(0.4, 0, 0.2, 1);
+  }
+
+  .topo-menu-link-entre-em-contato:hover {
+    background-color: var(--preto-900);
+    color: #fff;
+  }
+}
+
+
+
+/* desktop */
+@media (min-width: 1024px) {
+  .topo-interno {
+    max-width: 1280px;
+    margin: 0 auto;
+  }
+
+  .topo-logo {
+    width: 167px;
+  }
+
+  .topo-menu {
+    font-size: 1rem;
+  }
+
+  .topo-menu-lista {
+    gap: 32px;
+  }
+
+  .topo-menu-link {
+    padding: 0.5rem;
+  }
+
+  .topo-menu-link-entre-em-contato {
+    font-size: 1.25rem;
+    padding: 0.8125rem 1.5625rem;
+  }
+}
