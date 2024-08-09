@@ -1,68 +1,359 @@
 <!DOCTYPE html>
-<html lang="pt-br">
+<html class="scroll-smooth" lang="pt-br">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script src="https://cdn.tailwindcss.com"></script>
   <title>Soul Brokers</title>
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <header class="topo">
-    <div class="topo-interno">
-      <img class="topo-logo" src="./src/img/logo.svg" alt="Logo da Soul Brokers">
-      <label for="topo-menu-mobile">
-        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="topo-menu-mobile-btn">
+  <header class="py-2 md:py-[15px] fixed inset-x-0 top-0 px-4 z-20 bg-white text-[#96A0B5] topo">
+    <div class="flex items-center justify-between lg:max-w-[1280px] lg:mx-auto topo-interno">
+      <img class="w-[144px] lg:w-[167px] topo-logo" src="./src/img/logo.svg" alt="Logo da Soul Brokers">
+      <label class="cursor-pointer md:hidden flex" for="topo-menu-mobile">
+        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-9 topo-menu-mobile-btn">
           <path stroke-linecap="round" stroke-linejoin="round" d="M3.75 5.25h16.5m-16.5 4.5h16.5m-16.5 4.5h16.5m-16.5 4.5h16.5" />
         </svg>
       </label>
-      <input class="topo-menu-mobile-input" type="checkbox" name="topo-menu-mobile" id="topo-menu-mobile">
-      <nav class="topo-menu-mobile">
-        <ul class="topo-menu-mobile-lista">
+      <input class="hidden topo-menu-mobile-input js-topo-menu-mobile-input" type="checkbox" name="topo-menu-mobile" id="topo-menu-mobile">
+      <nav class="absolute invisible opacity-0 border border-gray-100 border-opacity-80 rounded-lg w-64 overflow-hidden top-full right-4 bg-white shadow-md md:hidden topo-menu-mobile">
+        <ul class="flex flex-col text-lg topo-menu-mobile-lista">
           <li>
-            <a class="topo-menu-mobile-link" href="#">Home</a>
+            <a class="font-medium p-4 inline-block w-full transition-colors hover:bg-gray-100 topo-menu-mobile-link js-topo-menu-mobile-link" href="#">Home</a>
           </li>
           <li>
-            <a class="topo-menu-mobile-link" href="#">Quem somos</a>
+            <a class="font-medium p-4 inline-block w-full transition-colors hover:bg-gray-100 topo-menu-mobile-link js-topo-menu-mobile-link" href="#quem-somos">Quem somos</a>
           </li>
           <li>
-            <a class="topo-menu-mobile-link" href="#">Serviços</a>
+            <a class="font-medium p-4 inline-block w-full transition-colors hover:bg-gray-100 topo-menu-mobile-link js-topo-menu-mobile-link" href="#servicos">Serviços</a>
           </li>
           <li>
-            <a class="topo-menu-mobile-link" href="#">Novidades</a>
+            <a class="font-medium p-4 inline-block w-full transition-colors hover:bg-gray-100 topo-menu-mobile-link js-topo-menu-mobile-link" href="#novidades">Novidades</a>
           </li>
           <li>
-            <a class="topo-menu-mobile-link" href="#">Localização</a>
+            <a class="font-medium p-4 inline-block w-full transition-colors hover:bg-gray-100 topo-menu-mobile-link js-topo-menu-mobile-link" href="#localizacao">Localização</a>
           </li>
           <li>
-            <a class="topo-menu-mobile-link topo-menu-mobile-link-entre-em-contato" href="#">Entre em Contato</a>
+            <a class="font-medium text-[#0C0A0A] underline underline-offset-4 p-4 inline-block w-full transition-colors hover:bg-gray-100 topo-menu-mobile-link js-topo-menu-mobile-link topo-menu-mobile-link-entre-em-contato" href="#">Entre em Contato</a>
           </li>
         </ul>
       </nav>
       <!-- desktop -->
-      <nav class="topo-menu">
-        <ul class="topo-menu-lista">
+      <nav class="hidden md:flex md:items-center md:text-sm lg:text-base topo-menu">
+        <ul class="md:flex md:items-center md:gap-5 lg:gap-8 topo-menu-lista">
           <li>
-            <a class="topo-menu-link" href="#">Home</a>
+            <a class="md:font-medium md:transition-colors md:duration-300 md:p-[0.15rem] md:hover:text-[#0C0A0A] lg:p-2 topo-menu-link" href="#">Home</a>
           </li>
           <li>
-            <a class="topo-menu-link" href="#">Quem somos</a>
+            <a class="md:font-medium md:transition-colors md:duration-300 md:p-[0.15rem] md:hover:text-[#0C0A0A] lg:p-2 topo-menu-link" href="#quem-somos">Quem somos</a>
           </li>
           <li>
-            <a class="topo-menu-link" href="#">Serviços</a>
+            <a class="md:font-medium md:transition-colors md:duration-300 md:p-[0.15rem] md:hover:text-[#0C0A0A] lg:p-2 topo-menu-link" href="#servicos">Serviços</a>
           </li>
           <li>
-            <a class="topo-menu-link" href="#">Novidades</a>
+            <a class="md:font-medium md:transition-colors md:duration-300 md:p-[0.15rem] md:hover:text-[#0C0A0A] lg:p-2 topo-menu-link" href="#novidades">Novidades</a>
           </li>
           <li>
-            <a class="topo-menu-link" href="#">Localização</a>
+            <a class="md:font-medium md:transition-colors md:duration-300 md:p-[0.15rem] md:hover:text-[#0C0A0A] lg:p-2 topo-menu-link" href="#localizacao">Localização</a>
           </li>
         </ul>
       </nav>
-      <a class="topo-menu-link-entre-em-contato" href="#">Entre em contato</a>
+      <a class="font-medium hidden md:block md:transition-colors md:duration-300 md:border md:border-solid md:border-[#0C0A0A] md:text-[#0C0A0A] md:py-[0.4375rem] md:px-[1.1875rem] md:rounded-[50px] md:text-sm md:hover:bg-[#0C0A0A] md:hover:text-white lg:text-xl lg:py-[0.8125rem] lg:px-[1.5625rem] topo-menu-link-entre-em-contato" href="#">Entre em contato</a>
     </div>
-
   </header>
-  <main></main>
-  <footer></footer>
+  <main class="principal">
+    <section class="mt-[120px] mb-[79px] md:mt-[174px] lg:mx-auto sessao-primaria">
+      <div class="max-w-[550px] max-[767px]:px-4 mx-auto mb-[40px] min-[1070px]:max-w-[1280px] min-[1070px]:flex min-[1070px]:items-center sessao-primaria-interno-1">
+        <h1 class="text-center text-[#101010] text-[2.80rem] font-medium md:text-6xl min-[1070px]:text-left min-[1070px]:text-[5rem] min-[1070px]:leading-[98.4px] tt">Nossa essência é cuidar de você!</h1>
+        <div>
+          <p class="text-[#96A0B5] text-center leading-[1.875rem] my-5 md:text-[1.25rem] md:my-[1.5625rem] min-[1070px]:max-w-[650px] min-[1070px]:mt-0 min-[1070px]:mb-[53px] min-[1070px]:text-left">Somos a Soul Brokers. Temos como propósito prestar serviços e criar soluções de seguros específicas para cada ramo de atuação.</p>
+          <a class="group bg-[#0C0A0A] text-white flex items-center rounded-[50px] w-max py-[0.8125rem] px-[1.5625rem] text-xl gap-[0.625rem] min-[1070px]:mx-0 font-medium mx-auto principal-link-nossos-servicos" href="#servicos">
+            Conheça nossos serviços
+            <svg class="group-hover:translate-x-2 transition-transform duration-300 w-[24px] h-[25px]" viewBox="0 0 24 25" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M14.4301 6.42969L20.5001 12.4997L14.4301 18.5697" stroke="white" stroke-width="1.5" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"/>
+              <path d="M3.5 12.5H20.33" stroke="white" stroke-width="1.5" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          </a>
+        </div>
+      </div>
+      <div class="sessao-primaria-interno-2">
+        <div class="banner-conteiner overflow-x-hidden max-w-[2000px] mx-auto relative">
+          <span class="z-10 group hover:bg-white cursor-pointer transition-colors duration-300 bg-[#FFFFFF1F] rounded-full p-2.5 absolute left-4 top-1/2 -translate-y-1/2 md:hidden js-banner-slider-seta-voltar">
+            <svg class="text-[#96A0B5] transition-colors duration-300 group-hover:text-[#0C0A0A]" width="28" height="28" viewBox="0 0 28 28" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M17.5 23.2398L9.89335 15.6331C8.99502 14.7348 8.99502 13.2648 9.89335 12.3664L17.5 4.75977" stroke="currentColor" stroke-width="2" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          </span>
+          <div class="flex transition-transform duration-300 banner-slider js-banner-slider">
+            <img class="max-[470px]:h-80 w-full object-cover" src="./src/img/banner-1.png" alt="Banner apresentando a imagem de um navio em alto mar">
+            <img class="max-[470px]:h-80 w-full object-cover" src="./src/img/banner-2.png" alt="Banner apresentando a imagem de um navio carregando conteiners">
+          </div>
+          <div class="absolute bottom-0 inset-x-0 bg-black bg-opacity-30 px-4 py-2 md:py-9">
+            <div class="max-w-[1280px] mx-auto md:flex md:items-center md:justify-between">
+              <p class="text-sm md:text-base text-[#D9D9D9] md:max-w-[28.1875rem]">It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker.</p>
+              <div class="hidden md:flex md:gap-6">
+                <span class="z-10 group hover:bg-white cursor-pointer transition-colors duration-300 bg-[#FFFFFF1F] rounded-full p-2.5 js-banner-slider-seta-voltar">
+                  <svg class="text-[#96A0B5] transition-colors duration-300 group-hover:text-[#0C0A0A]" width="28" height="28" viewBox="0 0 28 28" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M17.5 23.2398L9.89335 15.6331C8.99502 14.7348 8.99502 13.2648 9.89335 12.3664L17.5 4.75977" stroke="currentColor" stroke-width="2" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"/>
+                  </svg>
+                </span>
+                <span class="z-10 group hover:bg-white cursor-pointer transition-colors duration-300 bg-[#FFFFFF1F] rounded-full p-2.5 js-banner-slider-seta-avancar">
+                  <svg class="text-[#96A0B5] transition-colors duration-300 group-hover:text-[#0C0A0A]" width="28" height="28" viewBox="0 0 28 28" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M10.395 23.2398L18.0017 15.6331C18.9 14.7348 18.9 13.2648 18.0017 12.3664L10.395 4.75977" stroke="currentColor" stroke-width="2" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"/>
+                  </svg>
+                </span>
+              </div>
+            </div>
+          </div>
+          <span class="z-10 group hover:bg-white cursor-pointer transition-colors duration-300 bg-[#FFFFFF1F] rounded-full p-2.5 absolute right-4 top-1/2 -translate-y-1/2 md:hidden js-banner-slider-seta-avancar">
+            <svg class="text-[#96A0B5] transition-colors duration-300 group-hover:text-[#0C0A0A]" width="28" height="28" viewBox="0 0 28 28" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M10.395 23.2398L18.0017 15.6331C18.9 14.7348 18.9 13.2648 18.0017 12.3664L10.395 4.75977" stroke="currentColor" stroke-width="2" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          </span>
+        </div>
+      </div>
+    </section>
+    <section id="quem-somos" class="scroll-mt-[6rem] px-4 my-14 lg:my-[6.25rem] sessao-secundaria">
+      <div class="text-center mb-5 md:mb-[3.4375rem]">
+        <span class="inline-block font-semibold mb-[1.25rem] text-[#96A0B5] md:text-[1.5rem]">Conheça</span>
+        <h2 class="text-[1.8rem] text-[#101010] font-medium md:text-[2.8rem] lg:text-[3.75rem] subtt">A tranquilidade que você precisa!</h2>
+      </div>
+      <div class="grid gap-4 max-w-[1280px] mx-auto md:grid-cols-2">
+        <!-- coluna 1 -->
+        <div class="flex lg:items-end bg-[url('./src/img/img-1.png')] bg-cover pt-60 bg-center bg-no-repeat md:col-span-2 lg:col-span-1">
+          <div class="w-full bg-gradient-to-b from-[#fff]/30 to-[#0C0A0A]/80 px-4 pb-12 pt-10 lg:pt-[6.5rem] lg:pb-6 lg:px-6">
+            <h3 class="mb-3 text-white subtt text-[1.5rem] font-medium">Gestão de Transportes</h3>
+            <p class="text-[#D9D9D9] max-w-[451px]">It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker.</p>
+          </div>
+        </div>
+        <!-- coluna 2 -->
+        <div class="grid gap-4 md:grid-cols-2 md:col-span-2 lg:col-span-1 lg:grid-cols-1">
+          <div class="lg:flex">
+            <img class="lg:w-[180px] lg:object-cover" src="./src/img/img-2.png" alt="Imagem de um caminhão.">
+            <div class="px-4 py-12 bg-[#01737F] lg:pt-[5rem] lg:px-6 lg:pb-6">
+              <h3 class="mb-3 text-white subtt text-[1.5rem] font-medium">Acompanhamento de Frota</h3>
+              <p class="text-[#D9D9D9]">It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker.</p>
+            </div>
+          </div>
+          <div class="flex flex-col-reverse justify-end bg-[#031356] lg:flex-row">
+            <div class="px-4 py-12 lg:pt-[6.5rem] lg:px-6 lg:pb-6">
+              <h3 class="mb-3 text-white subtt text-[1.5rem] font-medium">Segurança Empresarial</h3>
+              <p class="text-[#D9D9D9]">It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop.</p>
+            </div>
+            <img class="lg:w-[180px] lg:object-cover" src="./src/img/img-3.png" alt="Imagem de trabalhadores exercendo seu trabalho.">
+          </div>
+        </div>
+      </div>
+    </section>
+    <section id="novidades" class="scroll-mt-[2.5rem] px-4 py-[6.25rem] bg-[#0C0A0A] sessao-terciaria">
+      <div class="max-w-[1280px] mx-auto">
+        <div>
+          <div class="md:flex md:items-start md:justify-between md:mb-[3.4375rem] lg:mb-5">
+            <h2 class="text-[1.8rem] text-white font-medium md:text-[2.8rem] lg:text-[3.75rem] subtt">Novidades</h2>
+            <div class="hidden md:flex md:items-center md:gap-6">
+              <span class="z-10 group hover:bg-white cursor-pointer transition-colors duration-300 bg-[#FFFFFF1F] rounded-full p-2.5 js-novidades-seta-voltar">
+                <svg class="text-[#96A0B5] transition-colors duration-300 group-hover:text-[#0C0A0A]" width="28" height="28" viewBox="0 0 28 28" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M17.5 23.2398L9.89335 15.6331C8.99502 14.7348 8.99502 13.2648 9.89335 12.3664L17.5 4.75977" stroke="currentColor" stroke-width="2" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+              </span>
+              <span class="z-10 group hover:bg-white cursor-pointer transition-colors duration-300 bg-[#FFFFFF1F] rounded-full p-2.5 js-novidades-seta-avancar">
+                <svg class="text-[#96A0B5] transition-colors duration-300 group-hover:text-[#0C0A0A]" width="28" height="28" viewBox="0 0 28 28" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M10.395 23.2398L18.0017 15.6331C18.9 14.7348 18.9 13.2648 18.0017 12.3664L10.395 4.75977" stroke="currentColor" stroke-width="2" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+              </span>
+            </div>
+          </div>
+          <p class="my-5 text-[#96A0B5] max-w-[707px] lg:text-[1.5rem] lg:mb-[3.75rem]">Mantenha-se atualizado sobre todas as novidades de tendências do mercado, nossas matérias são cuidadosamente selecionadas para deixar você sempre atualizado.</p>
+        </div>
+        <ul class="flex gap-5 overflow-x-auto snap-x scroll-smooth novidades-lista js-novidades-lista">
+          <li class="snap-center border border-solid border-[#4F4A4A] p-6 max-w-[22.5625rem]">
+            <img src="./src/img/img-novidades-1.png" alt="Imagem de uma pessoa escrevendo com a mão direita e fazendo sinal positivo com a mão esquerda.">
+            <h3 class="mt-6 mb-4 text-white subtt text-[1.5rem] font-medium truncate">Susep fornece novas direções para funcionários</h3>
+            <p class="text-[#96A0B5]">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s.</p>
+          </li>
+          <li class="snap-center border border-solid border-[#4F4A4A] p-6 max-w-[22.5625rem]">
+            <img src="./src/img/img-novidades-2.png" alt="Imagem de representação do meio ambiente.">
+            <h3 class="mt-6 mb-4 text-white subtt text-[1.5rem] font-medium truncate">Abril Verde: Segurança e meio ambiente</h3>
+            <p class="text-[#96A0B5]">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s.</p>
+          </li>
+          <li class="snap-center border border-solid border-[#4F4A4A] p-6 max-w-[22.5625rem]">
+            <img src="./src/img/img-novidades-3.png" alt="Imagem de um médico e seu paciente.">
+            <h3 class="mt-6 mb-4 text-white subtt text-[1.5rem] font-medium truncate">A importância da medicina nos anos atuais</h3>
+            <p class="text-[#96A0B5]">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s.</p>
+          </li>
+          <li class="snap-center border border-solid border-[#4F4A4A] p-6 max-w-[22.5625rem]">
+            <img src="./src/img/img-novidades-4.png" alt="Imagem de algumas pessoas em um ambiente de trabalho.">
+            <h3 class="mt-6 mb-4 text-white subtt text-[1.5rem] font-medium truncate">Como o mercado de trabalho está necessitado</h3>
+            <p class="text-[#96A0B5]">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s.</p>
+          </li>
+        </ul>
+        <div class="mt-5 flex items-center justify-between md:hidden">
+          <span class="z-10 group hover:bg-white cursor-pointer transition-colors duration-300 bg-[#FFFFFF1F] rounded-full p-2.5 js-novidades-seta-voltar">
+            <svg class="text-[#96A0B5] transition-colors duration-300 group-hover:text-[#0C0A0A]" width="28" height="28" viewBox="0 0 28 28" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M17.5 23.2398L9.89335 15.6331C8.99502 14.7348 8.99502 13.2648 9.89335 12.3664L17.5 4.75977" stroke="currentColor" stroke-width="2" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          </span>
+          <span class="z-10 group hover:bg-white cursor-pointer transition-colors duration-300 bg-[#FFFFFF1F] rounded-full p-2.5 js-novidades-seta-avancar">
+            <svg class="text-[#96A0B5] transition-colors duration-300 group-hover:text-[#0C0A0A]" width="28" height="28" viewBox="0 0 28 28" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M10.395 23.2398L18.0017 15.6331C18.9 14.7348 18.9 13.2648 18.0017 12.3664L10.395 4.75977" stroke="currentColor" stroke-width="2" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          </span>
+        </div>
+      </div>
+    </section>
+    <section id="servicos" class="scroll-mt-[2.5rem] px-4 py-[6.25rem] sessao-quaternaria">
+      <div class="max-w-[1280px] mx-auto">
+        <h2 class="mb-5 pb-5 md:mb-[3.4375rem] text-[1.8rem] md:pb-10 md:mb-10 border-b border-solid border-[#ADABAB] text-[#101010] font-medium md:text-[2.8rem] lg:text-[3.75rem] subtt">Nossos serviços</h2>
+        <ul class="flex flex-col gap-20">
+          <li class="md:flex gap-5 md:items-end lg:gap-[3.75rem] md:max-w-[1099px]">
+            <img class="md:w-[500px] md:h-[300px] object-cover" src="./src/img/img-servicos-1.png" alt="Imagem representando médicos.">
+            <div>
+              <h3 class="text-[1.5rem] md:mt-0 mt-6 text-[#101010] font-medium lg:text-[2.5rem] subtt">Planos de Saúde</h3>
+              <p class="my-4 lg:mb-[1.875rem] text-[#96A0B5] lg:text-[1.25rem]">It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
+                It has survived not only five centuries.</p>
+              <a class="group border lg:text-[1.25rem] rounded-[50px] justify-center md:justify-start py-[0.75rem] md:px-[1.5625rem] gap-2.5 md:w-max font-medium border-solid border-[#0C0A0A] flex items-center text-[#0C0A0A] transition-colors duration-300 hover:text-white hover:bg-[#0C0A0A]" href="#">
+                Conheça
+                <svg class="group-hover:translate-x-2 transition-transform duration-300 size-6" viewBox="0 0 24 25" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M14.4301 6.42969L20.5001 12.4997L14.4301 18.5697" stroke="currentColor" stroke-width="1.5" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"/>
+                  <path d="M3.5 12.5H20.33" stroke="currentColor" stroke-width="1.5" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+              </a>
+            </div>
+          </li>
+          <li class="md:flex gap-5 md:items-end lg:gap-[3.75rem] md:max-w-[1099px]">
+            <img class="md:w-[500px] md:h-[300px] object-cover" src="./src/img/img-servicos-2.png" alt="Imagem representando médicos.">
+            <div>
+              <h3 class="text-[1.5rem] md:mt-0 mt-6 text-[#101010] font-medium lg:text-[2.5rem] subtt">Seguro de Frota</h3>
+              <p class="my-4 lg:mb-[1.875rem] text-[#96A0B5] lg:text-[1.25rem]">It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
+                It has survived not only five centuries.</p>
+              <a class="group border lg:text-[1.25rem] rounded-[50px] justify-center md:justify-start py-[0.75rem] md:px-[1.5625rem] gap-2.5 md:w-max font-medium border-solid border-[#0C0A0A] flex items-center text-[#0C0A0A] transition-colors duration-300 hover:text-white hover:bg-[#0C0A0A]" href="#">
+                Conheça
+                <svg class="group-hover:translate-x-2 transition-transform duration-300 size-6" viewBox="0 0 24 25" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M14.4301 6.42969L20.5001 12.4997L14.4301 18.5697" stroke="currentColor" stroke-width="1.5" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"/>
+                  <path d="M3.5 12.5H20.33" stroke="currentColor" stroke-width="1.5" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+              </a>
+            </div>
+          </li>
+          <li class="md:flex gap-5 md:items-end lg:gap-[3.75rem] md:max-w-[1099px]">
+            <img class="md:w-[500px] md:h-[300px] object-cover" src="./src/img/img-servicos-3.png" alt="Imagem representando médicos.">
+            <div>
+              <h3 class="text-[1.5rem] md:mt-0 mt-6 text-[#101010] font-medium lg:text-[2.5rem] subtt">Seguro Empresarial</h3>
+              <p class="my-4 lg:mb-[1.875rem] text-[#96A0B5] lg:text-[1.25rem]">It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
+                It has survived not only five centuries.</p>
+              <a class="group border lg:text-[1.25rem] rounded-[50px] justify-center md:justify-start py-[0.75rem] md:px-[1.5625rem] gap-2.5 md:w-max font-medium border-solid border-[#0C0A0A] flex items-center text-[#0C0A0A] transition-colors duration-300 hover:text-white hover:bg-[#0C0A0A]" href="#">
+                Conheça
+                <svg class="group-hover:translate-x-2 transition-transform duration-300 size-6" viewBox="0 0 24 25" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M14.4301 6.42969L20.5001 12.4997L14.4301 18.5697" stroke="currentColor" stroke-width="1.5" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"/>
+                  <path d="M3.5 12.5H20.33" stroke="currentColor" stroke-width="1.5" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+              </a>
+            </div>
+          </li>
+        </ul>
+      </div>
+    </section>
+  </main>
+  <footer class="font-medium text-[#96A0B5] px-4 pt-[6.25rem] bg-[#0C0A0A] sessao-terciaria">
+    <div class="max-w-[1280px] mx-auto">
+      <div class="px-4 md:px-0 max-w-[550px] mx-auto mb-[3.75rem] min-[1070px]:max-w-[1280px] min-[1070px]:flex min-[1070px]:items-center sessao-primaria-interno-1">
+        <h1 class="text-center text-white text-[2.80rem] font-medium md:text-6xl min-[1070px]:text-left min-[1070px]:text-[5rem] min-[1070px]:leading-[98.4px] tt">Venha tomar um café conosco!</h1>
+        <div>
+          <p class="font-normal text-center leading-[1.875rem] my-5 md:text-[1.25rem] md:my-[1.5625rem] min-[1070px]:max-w-[650px] min-[1070px]:mt-0 min-[1070px]:mb-[53px] min-[1070px]:text-left">Somos a Soul Brokers. Temos como propósito prestar serviços e criar soluções de seguros específicas para cada ramo de atuação.</p>
+          <a class="border border-solid border-white group bg-[#0C0A0A] text-white flex items-center rounded-[50px] w-max py-[0.8125rem] px-[1.5625rem] text-xl gap-[0.625rem] min-[1070px]:mx-0 font-medium mx-auto principal-link-nossos-servicos" href="#">
+            Entre em Contato
+            <svg class="group-hover:translate-x-2 transition-transform duration-300 w-[24px] h-[25px]" viewBox="0 0 24 25" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M14.4301 6.42969L20.5001 12.4997L14.4301 18.5697" stroke="white" stroke-width="1.5" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"/>
+              <path d="M3.5 12.5H20.33" stroke="white" stroke-width="1.5" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          </a>
+        </div>
+      </div>
+      <div class="text-center min-[1070px]:text-left flex flex-col gap-7 min-[1070px]:flex-row min-[1070px]:justify-between mb-[3.75rem] lg:text-[1.5rem]">
+        <div class="flex flex-col items-center min-[1070px]:items-start">
+          <img class="w-max mb-6" src="./src/img/logo-rodape.svg" alt="Logo da Soul Brokers">
+          <p class="leading-[1.875rem] md:leading-[2.25rem] max-w-[342px] text-[#96A0B5]">Nosso objetivo é atender às necessidades dos clientes com produtos de qualidade. Contamos com um time experiente para oferecer Proteção sob Medida.</p>
+        </div>
+        <div class="min-[1070px]:mt-28">
+          <h3 id="localizacao" class="scroll-mt-[80px] text-white mb-2.5 lg:mb-[1.3125rem]">Localização</h3>
+          <p>
+            Praça Silvio Romero,
+            <br>
+            55 - Conjunto 34
+          </p>
+        </div>
+        <div class="min-[1070px]:mt-28">
+          <h3 class="text-white mb-2.5 lg:mb-[1.3125rem]">Empresa</h3>
+          <nav>
+            <ul class="flex flex-col gap-3">
+              <li>
+                <a class="hover:text-white transition-colors duration-300" href="#">Sobre nós</a>
+              </li>
+              <li>
+                <a class="hover:text-white transition-colors duration-300" href="#servicos">Serviços</a>
+              </li>
+              <li>
+                <a class="hover:text-white transition-colors duration-300" href="#novidades">Novidades</a>
+              </li>
+              <li>
+                <a class="hover:text-white transition-colors duration-300" href="#localizacao">Localização</a>
+              </li>
+            </ul>
+          </nav>
+        </div>
+        <div class="min-[1070px]:mt-28">
+          <h3 class="text-white mb-2.5 lg:mb-[1.3125rem]">Ajuda</h3>
+          <nav>
+            <ul class="flex flex-col gap-3">
+              <li>
+                <a class="hover:text-white transition-colors duration-300" href="#">Políticas de Uso</a>
+              </li>
+              <li>
+                <a class="hover:text-white transition-colors duration-300" href="#">Privacidade</a>
+              </li>
+              <li>
+                <a class="hover:text-white transition-colors duration-300" href="#">Termos de uso</a>
+              </li>
+              <li>
+                <a class="hover:text-white transition-colors duration-300" href="#">FAQs</a>
+              </li>
+            </ul>
+          </nav>
+        </div>
+      </div>
+      <div class="border-t border-solid border-[#96A0B540] py-[3.75rem] grid justify-items-center gap-7 lg:grid-cols-3 lg:items-center">
+        <p class="text-center min-[1070px]:text-left lg:text-nowrap">2024 Copyright - Todos os Direitos Reservados - SoulBrokers</p>
+        <img class="w-[167px] h-[65px]" src="./src/img/logo-rodape.svg" alt="Logo da Soul Brokers">
+        <nav class="lg:justify-self-end">
+          <ul class="flex items-center gap-6">
+            <li>
+              <a class="inline-block border border-dashed border-current rounded-full p-2.5 hover:text-white transition-colors duration-300" href="#">
+                <svg width="12" height="12" viewBox="0 0 14 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M10.2074 8.88891C10.0337 8.80209 9.17695 8.382 9.01728 8.32459C8.85762 8.26647 8.74156 8.23777 8.6255 8.41141C8.50945 8.58434 8.17534 8.97573 8.07335 9.09126C7.97207 9.20678 7.87008 9.22078 7.69634 9.13396C7.18292 8.9305 6.70902 8.63955 6.29592 8.27418C5.91492 7.92361 5.58828 7.51872 5.32667 7.07271C5.22538 6.89908 5.31612 6.80525 5.40334 6.71914C5.48141 6.64142 5.57777 6.51679 5.66429 6.41527C5.73595 6.32762 5.79468 6.23026 5.83873 6.12611C5.8619 6.07824 5.87269 6.02537 5.87011 5.9723C5.86753 5.91924 5.85167 5.86765 5.82396 5.82224C5.78035 5.73542 5.43217 4.88193 5.28728 4.53466C5.1459 4.19718 5.00241 4.24269 4.8948 4.23709C4.79351 4.23219 4.67745 4.23079 4.5614 4.23079C4.47311 4.23324 4.38629 4.25385 4.3064 4.29133C4.2265 4.3288 4.15527 4.38233 4.09717 4.44854C3.90024 4.63417 3.74431 4.8586 3.63932 5.10753C3.53432 5.35646 3.48256 5.62442 3.48734 5.89435C3.54382 6.54846 3.79097 7.17191 4.19845 7.68815C4.94538 8.80283 5.9707 9.70498 7.17373 10.306C7.49825 10.4448 7.82974 10.5668 8.1669 10.6715C8.52235 10.7789 8.89809 10.8022 9.26417 10.7394C9.50662 10.6905 9.73626 10.5921 9.93856 10.4504C10.1409 10.3087 10.3114 10.1267 10.4395 9.91604C10.5538 9.65694 10.589 9.37012 10.5408 9.09126C10.4979 9.01844 10.3818 8.97573 10.2074 8.88891ZM11.9602 2.53222C10.7644 1.3422 9.17496 0.625288 7.48772 0.51494C5.80048 0.404593 4.13044 0.908334 2.78852 1.93238C1.44661 2.95643 0.524267 4.43099 0.193213 6.08155C-0.137841 7.73211 0.144953 9.44619 0.988947 10.9047L0 14.4999L3.69554 13.5358C4.71766 14.0898 5.86291 14.3801 7.02673 14.3802H7.02954C8.40823 14.3795 9.75577 13.9721 10.9019 13.2093C12.0481 12.4466 12.9414 11.3629 13.469 10.095C13.9967 8.8271 14.135 7.43198 13.8664 6.08591C13.5979 4.73983 12.9345 3.50318 11.9602 2.53221V2.53222ZM10.1082 12.3267C9.18549 12.9024 8.11856 13.2079 7.02954 13.2081H7.02673C5.98918 13.2081 4.97075 12.9302 4.07818 12.4037L3.86646 12.279L1.67333 12.8518L2.25854 10.7233L2.12138 10.5049C1.51264 9.53854 1.20543 8.41423 1.2386 7.27411C1.27177 6.134 1.64383 5.02927 2.30772 4.09963C2.97162 3.16999 3.89754 2.45719 4.9684 2.05136C6.03926 1.64554 7.20697 1.56491 8.32387 1.81967C9.44076 2.07443 10.4567 2.65315 11.2432 3.48264C12.0297 4.31213 12.5514 5.35514 12.7424 6.47978C12.9334 7.60442 12.785 8.76018 12.3162 9.80091C11.8473 10.8416 11.0789 11.7206 10.1082 12.3267Z" fill="currentColor"/>
+                </svg>
+              </a>
+            </li>
+            <li>
+              <a class="inline-block border border-dashed border-current rounded-full p-2.5 hover:text-white transition-colors duration-300" href="#">
+                <svg width="12" height="12" viewBox="0 0 14 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M5.24996 13.3332H8.74996C11.6666 13.3332 12.8333 12.1665 12.8333 9.24984V5.74984C12.8333 2.83317 11.6666 1.6665 8.74996 1.6665H5.24996C2.33329 1.6665 1.16663 2.83317 1.16663 5.74984V9.24984C1.16663 12.1665 2.33329 13.3332 5.24996 13.3332Z" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                  <path d="M7.00004 9.54183C8.12762 9.54183 9.04171 8.62774 9.04171 7.50016C9.04171 6.37258 8.12762 5.4585 7.00004 5.4585C5.87246 5.4585 4.95837 6.37258 4.95837 7.50016C4.95837 8.62774 5.87246 9.54183 7.00004 9.54183Z" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                  <path d="M10.2877 4.58317H10.2944" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+              </a>
+            </li>
+            <li>
+              <a class="inline-block border border-dashed border-current rounded-full p-2.5 hover:text-white transition-colors duration-300" href="#">
+                <svg width="12" height="12" viewBox="0 0 7 13" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M5.82 2.60319H6.91667V0.748188C6.38569 0.692974 5.85218 0.665714 5.31834 0.666521C3.73167 0.666521 2.64667 1.63485 2.64667 3.40819V4.93652H0.855835V7.01319H2.64667V12.3332H4.79333V7.01319H6.57833L6.84667 4.93652H4.79333V3.61235C4.79333 2.99986 4.95667 2.60319 5.82 2.60319Z" fill="currentColor"/>
+                </svg>
+              </a>
+            </li>
+          </ul>
+        </nav>
+      </div>
+    </div>
+  </footer>
+  <script src="./app.js"></script>
 </body>
 </html>
