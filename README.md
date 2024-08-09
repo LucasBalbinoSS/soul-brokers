@@ -6,7 +6,9 @@
  - Open the mobile menu and be directed to the session you want by clicking on the links 🖱️
  - Go forward and back by clicking on the slider arrows ➡️
 
-Note: The page is 100% responsive. 📱 💻
+Notes:<br>
+- The page is 100% responsive. 📱 💻
+- **Mobile was designed for devices from 400px** ‼️
 
 ---
 
