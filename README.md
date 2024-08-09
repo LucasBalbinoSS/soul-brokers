@@ -10,7 +10,8 @@ Note: The page is 100% responsive. 📱 💻
 
 ---
 
-## How to Run this Project 👇
+## How to run this project 👇
+
 1. Open the terminal on your computer
 2. Use the `cd` command to navigate to the folder where you want to save the project
 3. Run the following command:
